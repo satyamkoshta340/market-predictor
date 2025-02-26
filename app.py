@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the data
-@st.cache
+@st.cache_data
 def load_data():
     return pd.read_csv('Nifty_Features.csv')
 
