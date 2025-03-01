@@ -61,6 +61,7 @@ def update_nifty_data():
         df = nifty50.history(period="5y")
         df.reset_index(inplace=True)
         df["Date"] = pd.to_datetime(df["Date"]).dt.date
+        df.columns = df.columns.str.lower()  # Convert all column names to lowercase
         df.to_csv(FILE_PATH, index=False)
         return "🆕 New file created with full data!"
     
